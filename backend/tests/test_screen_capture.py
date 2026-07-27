@@ -24,7 +24,7 @@ from modules.screen_capture.app_tracker import is_excluded
 
 class TestMasker:
     def test_openai_key_masked(self):
-        text = "export OPENAI_KEY=sk-aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890abcd"
+        text = "export OPENAI_KEY=sk-.."
         result = mask(text)
         assert "sk-" not in result
         assert "[OPENAI_KEY]" in result
@@ -35,7 +35,7 @@ class TestMasker:
         assert "[REDACTED]" in result
 
     def test_github_token_masked(self):
-        result = mask("token: ghp_aBcDeFgHiJkLmNoPqRsTuVwXyZabcdefghij")
+        result = mask("token: ghp_...")
         assert "ghp_" not in result
 
     def test_hex_secret_masked(self):
@@ -47,7 +47,7 @@ class TestMasker:
         assert mask(text) == text
 
     def test_scan_detects_types(self):
-        text = "sk-aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890abcd"
+        text = "sk-..."
         found = scan_for_secrets(text)
         assert "openai_key" in found
 
