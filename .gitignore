@@ -24,6 +24,7 @@ env/
 # ── SQLite / local database (may contain user data) ───────────────────────────
 backend/data/*.db
 backend/data/*.sqlite3
+backend/data/chroma/
 
 # ── Testing & coverage ─────────────────────────────────────────────────────────
 .pytest_cache/
@@ -70,3 +71,4 @@ logs/
 
 # ── Misc ───────────────────────────────────────────────────────────────────────
 Thumbs.db
+backend/models/kokoro/
