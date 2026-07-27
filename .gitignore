@@ -1,0 +1,72 @@
+# ── Secrets & credentials (HIGH RISK – never commit) ──────────────────────────
+.env
+.env.*
+*.env
+!.env.example
+credentials.json
+secrets.json
+*.key
+*.pem
+
+# ── Python bytecode ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# ── Virtual environment ────────────────────────────────────────────────────────
+.venv/
+venv/
+ENV/
+env/
+.python-version
+
+# ── SQLite / local database (may contain user data) ───────────────────────────
+backend/data/*.db
+backend/data/*.sqlite3
+
+# ── Testing & coverage ─────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.tox/
+
+# ── Node / frontend ────────────────────────────────────────────────────────────
+node_modules/
+desktop/dist/
+desktop/dist-ssr/
+desktop/.vite/
+
+# ── Rust / Tauri build artifacts ───────────────────────────────────────────────
+desktop/src-tauri/target/
+desktop/src-tauri/WixTools/
+
+# ── Distribution & packaging ───────────────────────────────────────────────────
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ── IDE & editor ───────────────────────────────────────────────────────────────
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+
+# ── macOS ──────────────────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+._*
+
+# ── Logs & runtime ────────────────────────────────────────────────────────────
+logs/
+*.log
+*.pid
+
+# ── Jupyter ────────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Misc ───────────────────────────────────────────────────────────────────────
+Thumbs.db

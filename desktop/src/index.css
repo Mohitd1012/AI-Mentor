@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Allow text selection inside chat messages */
+  .selectable {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  :root {
+    --companion-bg: #0f1117;
+    --companion-surface: #1a1d27;
+    --companion-border: #2a2d3e;
+    --companion-accent: #6366f1;
+    --companion-accent-dim: #4f46e5;
+    --companion-text: #e2e8f0;
+    --companion-muted: #64748b;
+    --companion-success: #22c55e;
+    --companion-warning: #f59e0b;
+    --companion-error: #ef4444;
+  }
+
+  html, body, #root {
+    background: transparent !important;
+    background-color: transparent !important;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+      sans-serif;
+    font-size: 14px;
+    color: var(--companion-text);
+    overflow: hidden;
+  }
+
+  /* Overlay mode — second Tauri window.
+     We deliberately do NOT set `color-scheme` here: declaring any scheme
+     makes WebKit paint an opaque canvas (white in light, black in dark)
+     beneath the page. Leaving it unset is what enables true transparency
+     for windows configured with `transparent: true`. */
+  body.overlay-mode,
+  body.overlay-mode #root,
+  html.overlay-mode {
+    background: transparent !important;
+    background-color: rgba(0, 0, 0, 0) !important;
+    overflow: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: var(--companion-border);
+    border-radius: 2px;
+  }
+}

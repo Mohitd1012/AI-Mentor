@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Mentor</title>
+    <style>
+      /* Force every layer transparent BEFORE React loads any stylesheet so
+         the overlay window never paints a coloured frame on first paint.
+         No `color-scheme` declared — WebKit only auto-paints the canvas
+         when a scheme is set, otherwise it stays truly transparent. */
+      html, body, #root {
+        background: transparent !important;
+        background-color: rgba(0, 0, 0, 0) !important;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
